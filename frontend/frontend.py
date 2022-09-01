@@ -426,7 +426,6 @@ def draw_gradio_ui(opt, img2img=lambda x: x, txt2img=lambda x: x,imgproc=lambda 
         </div>
         """)
             
-            """
             if GFPGAN is not None:
                 gfpgan_defaults = {
                     'strength': 100,
