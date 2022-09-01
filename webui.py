@@ -1513,7 +1513,7 @@ def imgproc(image,image_batch,imgproc_prompt,imgproc_toggles, imgproc_upscale_to
             init_image = repeat(init_image, '1 ... -> b ...', b=batch_size)
             init_latent = (model if not opt.optimized else modelFS).get_first_stage_encoding((model if not opt.optimized else modelFS).encode_first_stage(init_image))  # move to latent space
             
-            if opt.optimized:
+            if opt.optimized and torch.cuda.is_available():
                 mem = torch.cuda.memory_allocated()/1e6
                 modelFS.to("cpu")
                 while(torch.cuda.memory_allocated()/1e6 >= mem):
