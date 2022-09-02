@@ -1,4 +1,5 @@
 import argparse, os, sys, glob, re
+import traceback
 
 from frontend.frontend import draw_gradio_ui
 from frontend.ui_functions import resize_image
