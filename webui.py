@@ -145,10 +145,10 @@ def load_model_from_config(config, ckpt, verbose=False):
         print("unexpected keys:")
         print(u)
 
-    if device.type == "cpu":
-        model.cpu()
-    else:
+    if torch.cuda.is_available():
         model.cuda()
+    else:
+        model.cpu()
     model.eval()
     return model
 
