@@ -434,7 +434,7 @@ def draw_gradio_ui(opt, img2img=lambda x: x, txt2img=lambda x: x,imgproc=lambda 
             <p><b> Please download RealESRGAN to activate upscale features</b>, instructions are available at the <a href='https://github.com/hlky/stable-diffusion-webui'>Github</a></p>
         </div>
         """)
-            
+        """   
             if GFPGAN is not None:
                 gfpgan_defaults = {
                     'strength': 100,
