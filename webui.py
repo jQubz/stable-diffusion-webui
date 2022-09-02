@@ -163,7 +163,8 @@ def crash(e, s):
     global model
     global device
 
-    print(s, '\n', e)
+    traceback_str = ''.join(traceback.format_tb(e.__traceback__))
+    print(s, '\n', e, '\n', traceback_str)
 
     del model
     del device
